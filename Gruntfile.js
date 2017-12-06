@@ -2,7 +2,7 @@ module.exports = function(grunt){
     
     grunt.initConfig({
         jshint: {
-            files: ['js/**/*.js'],
+            files: ['assets/js/**/*.js'],
             options: {
                 predef: ["document", "console", "$"],//Ignore these even though we haven't defined them
                 esnext: true, //Telling to use latest version of javascript
@@ -14,22 +14,22 @@ module.exports = function(grunt){
         sass: {
             dist: {
                 files: {
-                    'styles/main.css': 'sass/sass.scss'
+                    'assets/css/main.css': 'assets/sass/sass.scss'
                 }
             }
         }, 
         watch: {
             javascripts: {
-                files: ['js/**/*.js'],
+                files: ['assets/js/**/*.js'],
                 tasks: ['jshint', 'browserify']
             },
             sass: {
-                files: ['sass/**/*.scss'],
+                files: ['assets/sass/**/*.scss'],
                 tasks: ['sass']
             }
         },
         browserify: {
-            'dist/main.js': ['js/main.js']
+            'assets/dist/bundle.js': ['assets/js/main.js']
         }
     });
 
