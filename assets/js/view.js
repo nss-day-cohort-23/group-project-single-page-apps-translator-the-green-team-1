@@ -12,7 +12,10 @@ const displayTranslation = function(translation) {
 const displayDropdownItems = function(languages){
     const dropdownMenu = document.getElementById("language-select");
     languages.forEach(element => {
-        dropdownMenu.innerHTML+=`<option value='${element}'>${element}</option>`;
+        let optionsDom = document.createElement('option');
+        optionsDom.value = element;
+        optionsDom.text = element;
+        dropdownMenu.appendChild(optionsDom);
     });
 };
 
