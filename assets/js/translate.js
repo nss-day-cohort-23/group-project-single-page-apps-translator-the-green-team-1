@@ -10,8 +10,8 @@ function translate(text, destLang) {
         case "spanish":
             lang = require("./spanish");
             break;
-        // case "gaelic":
-        //     lang = require("./gaelic");
+        case "gaelic":
+            lang = require("./gaelic");
     }
     let lexicon = lang.getLexicon();
     let sentence = text.split(" ");
