@@ -1,12 +1,9 @@
 "use strict";
 
-
-
 // function that outputs the translated text to the dom after it has been translated/
 // first it gets the 
-
 // populate the dropdown menu with the available laguanges
-let translatedText = "tester";
+
 const displayTranslation = function(translation) {
     const translatedTextOutputBox = document.getElementById("output-text");
     translatedTextOutputBox.innerHTML = translation;
@@ -19,6 +16,4 @@ const displayDropdownItems = function(languages){
     });
 };
 
-displayTranslation(translatedText);
-
-module.exports = {displayTranslation};
+module.exports = {displayTranslation, displayDropdownItems};
