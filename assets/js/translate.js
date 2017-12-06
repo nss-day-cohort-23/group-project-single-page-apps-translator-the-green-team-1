@@ -15,7 +15,8 @@ function translate(text, destLang) {
     }
     let lexicon = lang.getLexicon();
     let sentence = text.split(" ");
-    let translation = sentence.map(word => lexicon[word.toLowerCase().replace(/['\",!.]/, "")]).join(" ");
+    let translation = sentence.map(word => lexicon[word.toLowerCase().replace(/['\",!.]/, "")] !== undefined ? lexicon[word.toLowerCase().replace(/['\",!.]/, "")] : word).join(" ");
+
     return translation;
 }
 
