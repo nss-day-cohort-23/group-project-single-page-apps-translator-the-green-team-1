@@ -1,7 +1,7 @@
 "use strict";
 
-const translate = require('./translate');
-const view = require('./view');
+const translator = require('./translate');
+const viewer = require('./view');
 
 const activateButton = () => {
     let button = document.getElementById("translate-button");
@@ -9,19 +9,12 @@ const activateButton = () => {
         let selectDropdown = document.getElementById("language-select");
         let selectedLanguage = selectDropdown.options[selectDropdown.selectedIndex].value;
         let textToTranslate = document.getElementById("translation-text").value;
-        view.displayTranslation(translate.translate(textToTranslate, selectedLanguage));
+        viewer.displayTranslation(translator.translate(textToTranslate, selectedLanguage));
     });
 };
 
 const populateHTML = () => {
-    let selectDropdown = document.getElementById("language-select");
-    let languages = translate.getLanguages();
-    languages.forEach(element => {
-        let optionsDom = document.createElement('option');
-        optionsDom.value = element;
-        optionsDom.text = element;
-        selectDropdown.appendChild(optionsDom);
-    });
+    viewer.displayDropdownItems(translator.getLanguages());
 };
 
 module.exports.createPage = () => {
