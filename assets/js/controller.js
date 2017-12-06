@@ -4,11 +4,12 @@ const translate = require('./translate');
 const view = require('./view');
 
 const populateHTML = () => {
-    console.log("hello");
+    //view.displayDropdownItmes();
 };
 
 const activateButton = () => {
-    console.log("hello");
+    let button = document.getElementById("translate-button");
+    //button.addEventListener("")
 };
 
 module.exports.createPage = () => {
