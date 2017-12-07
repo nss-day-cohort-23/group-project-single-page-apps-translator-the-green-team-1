@@ -7,7 +7,7 @@ const activateEvents = () => {
     let button = document.getElementById("translate-button");
     button.addEventListener("click", processUserInput);
     let textInput = document.getElementById("translation-text");
-    textInput.addEventListener("keypress", processUserInput);
+    textInput.addEventListener("keyup", processUserInput);
 };
 
 const processUserInput = () => {
