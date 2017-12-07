@@ -26,7 +26,6 @@ const displayDropdownItems = function(languages){
         option.id = element;
         if (element == "spanish") {
             option.setAttribute("checked", "checked");
-            label.classList += " active";
         }
         
         dropdownMenu.appendChild(label);

@@ -12,18 +12,20 @@ const activateEvents = () => {
 
 const processUserInput = () => {
     let selectedLanguage = getRadioValue();
-    alert(selectedLanguage);
     let textToTranslate = document.getElementById("translation-text").value;
-    viewer.displayTranslation(translator.translate(textToTranslate, selectedLanguage));
+    viewer.displayTranslation(translator.translate(textToTranslate, getRadioValue()));
 };
 
 const getRadioValue = () => {
     let radios = document.getElementsByClassName("radio");
-    [...radios].forEach(radio => {
+    let lang = false;
+    [...radios].forEach((element, index) => {
+        let radio = radios[index];
         if (radio.checked) {
-            return radio.id;
+            lang = radio.id;
         }
     });
+    return lang;
 };
 
 const populateHTML = () => {
