@@ -4,9 +4,25 @@
 // first it gets the 
 // populate the dropdown menu with the available laguanges
 
-const displayTranslation = function(translation) {
+const displayTranslation = function(translation, language) {
     const translatedTextOutputBox = document.getElementById("output-text");
     translatedTextOutputBox.innerHTML = translation;
+
+    /* ResponsiveVoice used under Non-Commercial License https://responsivevoice.org/ */
+    /* jshint ignore:start */
+    switch(language) {
+        case "zulu":
+            console.log("here");
+            responsiveVoice.speak(translation, "Swahili Male", {rate: 0.33});
+            break;
+        case "spanish":
+            responsiveVoice.speak(translation, "Spanish Latin American Female");
+            break;
+        case "gaelic":
+            responsiveVoice.speak(translation, "Deutsch Female");
+    }
+    /* jshint ignore:end */
+    
 };
 
 const displayDropdownItems = function(languages){
