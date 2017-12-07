@@ -12,10 +12,6 @@ const displayTranslation = function(translation) {
 const displayDropdownItems = function(languages){
     const dropdownMenu = document.getElementById("language-select");
     languages.forEach(element => {
-        // let optionsDom = document.createElement('option');
-        // optionsDom.value = element;
-        // optionsDom.text = element;
-        // dropdownMenu.appendChild(optionsDom);
         let label = document.createElement('label');
         label.classList = "btn btn-secondary";
 
