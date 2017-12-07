@@ -10,12 +10,13 @@ function translate(text, destLang) {
         case "spanish":
             lang = require("./spanish");
             break;
-        // case "gaelic":
-        //     lang = require("./gaelic");
+        case "gaelic":
+            lang = require("./gaelic");
     }
     let lexicon = lang.getLexicon();
     let sentence = text.split(" ");
-    let translation = sentence.map(word => lexicon[word.toLowerCase().replace(/['\",!.]/, "")]);
+    let translation = sentence.map(word => lexicon[word.toLowerCase().replace(/['\",!.]/, "")] !== undefined ? lexicon[word.toLowerCase().replace(/['\",!.]/, "")] : word).join(" ");
+
     return translation;
 }
 

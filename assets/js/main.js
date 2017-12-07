@@ -1,4 +1,3 @@
 "use strict";
-
-const view = require("./view");
-
+const controller = require('./controller');
+controller.createPage();
