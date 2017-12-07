@@ -6,27 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Great Green Language Translator</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 <body>
-    <main>
-        <h1>The Great Green Language Translator</h1>
-        <div>
-            <fieldset>
-                <label for="translation-text">English</label>
-                <textarea id="translation-text"></textarea>
-                <br/>
-                <label for="language-select">Translate To:</label>
-                <br/>
-                <select id="language-select">
-    <!--               <option value="zulu">Zulu</option>-->
-                </select>
-                <button id="translate-button">Translate</button>
-            </fieldset>
+    <main class="container">
+        <h1 class="my-5">The Great Green Language Translator</h1>
+        <div class="col">
+            <div class="input-group">
+                <span class="input-group-addon">English to be translated</span>
+                <input type="text" class="form-control" aria-label="English to be translated" id="translation-text">
+            </div>
         </div>
-        <div id="output-text">
-
+        <div class="input-group my-3">
+            <div class="col">
+                <div class="btn-group" id="language-select" role="group" aria-label="Basic example">
+                    <span class="input-group-addon">Translate to</span>
+                    <!-- <label class="btn btn-secondary">
+                        <input class="radio" type="radio" name="options" id="gaelic" autocomplete="off" checked> Gaelic
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input class="radio" type="radio" name="options" id="spanish" autocomplete="off"> Spanish
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input class="radio" type="radio" name="options" id="welsh" autocomplete="off"> Welsh
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input class="radio" type="radio" name="options" id="zulu" autocomplete="off"> Zulu
+                    </label> -->
+                </div>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary btn-block" id="translate-button">Translate</button>
+            </div>
+        </div>
+        <div id="output-text" class="my-4 alert alert-primary" role="alert">
+        </div>
+        <div id="voice-credit">
+            <a rel="license" href="//responsivevoice.org/">
+                <img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/120x31.png" class="my-3"/>
+            </a>
+            <div>
+                <span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">
+                    <a href="//responsivevoice.org/" target="_blank" title="ResponsiveVoice Text To Speech">ResponsiveVoice</a>
+                </span>
+                used under
+                <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License">Non-Commercial License</a>
+            </div>
         </div>
     </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <!--ResponsiveVoice used under Non-Commercial License https://responsivevoice.org/-->
     <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
     <script src="assets/dist/bundle.js"></script>
