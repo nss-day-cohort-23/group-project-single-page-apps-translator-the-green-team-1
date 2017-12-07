@@ -11,3 +11,10 @@ body {
     text-align: center;
     font-size: .8rem;
 }
+#slidecontainer {
+    input {
+        display: block;
+        margin: 0;
+        width: 100%;
+    }
+}
