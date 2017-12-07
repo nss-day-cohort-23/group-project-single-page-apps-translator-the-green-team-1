@@ -1,5 +1,6 @@
 "use strict";
 
+
 // display and speak translated text
 const displayTranslation = (translation, language) => {
     const translatedTextOutputBox = document.getElementById("output-text");
@@ -9,20 +10,30 @@ const displayTranslation = (translation, language) => {
 
 // speak translated text
 const speakTranslation = (translation, language) => {
+
+// function that outputs the translated text to the dom after it has been translated/
+// first it gets the 
+// populate the dropdown menu with the available laguanges
+    const speedSlider = document.getElementById("speedRange");
+
+    let voiceSpeed = speedSlider.value / 100;
+
     /* ResponsiveVoice used under Non-Commercial License https://responsivevoice.org/ */
     /* jshint ignore:start */
     switch(language) {
         case "zulu":
-            responsiveVoice.speak(translation, "Swahili Male", {rate: 0.33});
+            console.log("here");
+            responsiveVoice.speak(translation, "Swahili Male", {rate: voiceSpeed});
             break;
         case "spanish":
-            responsiveVoice.speak(translation, "Spanish Latin American Female");
+            responsiveVoice.speak(translation, "Spanish Latin American Female", {rate: voiceSpeed});
             break;
         case "gaelic":
-            responsiveVoice.speak(translation, "Deutsch Female");
+            responsiveVoice.speak(translation, "Deutsch Female", {rate: voiceSpeed});
             break;
         case "welsh":
-            responsiveVoice.speak(translation, "Deutsch Female");
+            responsiveVoice.speak(translation, "Deutsch Female", {rate: voiceSpeed});
+            break;
     }
     /* jshint ignore:end */
 };
