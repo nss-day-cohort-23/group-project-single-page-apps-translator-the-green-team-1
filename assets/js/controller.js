@@ -14,8 +14,7 @@ const processUserInput = () => {
     let selectDropdown = document.getElementById("language-select");
     let selectedLanguage = selectDropdown.options[selectDropdown.selectedIndex].value;
     let textToTranslate = document.getElementById("translation-text").value;
-    viewer.displayTranslation(translator.translate(textToTranslate, selectedLanguage));
-    console.log("test");
+    viewer.displayTranslation(translator.translate(textToTranslate, selectedLanguage), selectedLanguage);
 };
 
 const populateHTML = () => {
