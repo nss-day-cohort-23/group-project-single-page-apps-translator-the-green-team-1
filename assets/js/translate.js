@@ -2,13 +2,16 @@
 
 function translate(text, destLang) {
     let lang;
-    // assumption: destination languages = ["spanish", "zulu", "gaelic"]
+    // assumption: destination languages = ["spanish", "zulu", "gaelic", "welsh"]
     switch(destLang) {
         case "zulu":
             lang = require("./zulu");
             break;
         case "spanish":
             lang = require("./spanish");
+            break;
+        case "welsh":
+            lang = require("./welsh");
             break;
         case "gaelic":
             lang = require("./gaelic");
@@ -24,7 +27,8 @@ function getLanguages() {
     return [
         "zulu",
         "spanish",
-        "gaelic"
+        "gaelic",
+        "welsh"
     ];
 }
 
