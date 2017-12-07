@@ -6,16 +6,24 @@ const viewer = require('./view');
 const activateEvents = () => {
     let button = document.getElementById("translate-button");
     button.addEventListener("click", processUserInput);
-    let textArea = document.getElementById("translation-text");
-    textArea.addEventListener("keypress", processUserInput);
+    let textInput = document.getElementById("translation-text");
+    textInput.addEventListener("keypress", processUserInput);
 };
 
 const processUserInput = () => {
-    let selectDropdown = document.getElementById("language-select");
-    let selectedLanguage = selectDropdown.options[selectDropdown.selectedIndex].value;
+    let selectedLanguage = getRadioValue();
+    alert(selectedLanguage);
     let textToTranslate = document.getElementById("translation-text").value;
     viewer.displayTranslation(translator.translate(textToTranslate, selectedLanguage));
-    console.log("test");
+};
+
+const getRadioValue = () => {
+    let radios = document.getElementsByClassName("radio");
+    [...radios].forEach(radio => {
+        if (radio.checked) {
+            return radio.id;
+        }
+    });
 };
 
 const populateHTML = () => {
