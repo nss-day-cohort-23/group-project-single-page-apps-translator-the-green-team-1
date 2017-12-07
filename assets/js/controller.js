@@ -13,7 +13,7 @@ const activateEvents = () => {
 const processUserInput = () => {
     let selectedLanguage = getRadioValue();
     let textToTranslate = document.getElementById("translation-text").value;
-    viewer.displayTranslation(translator.translate(textToTranslate, getRadioValue()));
+    viewer.displayTranslation(translator.translate(textToTranslate, selectedLanguage), selectedLanguage);
 };
 
 const getRadioValue = () => {
