@@ -1,10 +1,9 @@
 "use strict";
 
 // display and speak translated text
-const displayTranslation = (translation, language) => {
+const displayTranslation = (translation) => {
     const translatedTextOutputBox = document.getElementById("output-text");
     translatedTextOutputBox.innerHTML = translation;
-    speakTranslation(translation, language);
 };
 
 // speak translated text
@@ -52,4 +51,4 @@ const displayDropdownItems = languages => {
 // reference: https://paulund.co.uk/capitalize-first-letter-string-javascript
 const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
 
-module.exports = {displayTranslation, displayDropdownItems};
+module.exports = {displayTranslation, speakTranslation, displayDropdownItems};
