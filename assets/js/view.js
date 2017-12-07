@@ -9,20 +9,18 @@ const displayTranslation = (translation, language) => {
 };
 
 // speak translated text
-const speakTranslation = (translation, language) => {
+const speedSlider = document.getElementById("speedRange"); // hilarious voice speed changer
 
+const speakTranslation = (translation, language) => {
 // function that outputs the translated text to the dom after it has been translated/
 // first it gets the 
 // populate the dropdown menu with the available laguanges
-    const speedSlider = document.getElementById("speedRange");
-
-    let voiceSpeed = speedSlider.value / 100;
+    let voiceSpeed = speedSlider.value / 100; // voice speed slider value needs to be divided by 100
 
     /* ResponsiveVoice used under Non-Commercial License https://responsivevoice.org/ */
     /* jshint ignore:start */
     switch(language) {
         case "zulu":
-            console.log("here");
             responsiveVoice.speak(translation, "Swahili Male", {rate: voiceSpeed});
             break;
         case "spanish":
